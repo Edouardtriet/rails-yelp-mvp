@@ -13,3 +13,114 @@
  *= require_tree .
  *= require_self
  */
+@import "restaurant";
+
+/* Overall Container */
+.restaurants-container {
+  max-width: 1200px;       /* Limits the width of the content */
+  margin: 0 auto;          /* Centers the container */
+  padding: 20px;           /* Adds space inside the container */
+  font-family: 'Roboto', sans-serif;  /* Modern, clean font */
+}
+
+/* Page Title */
+.page-title {
+  color: #333;             /* Dark gray, not pure black */
+  text-align: center;      /* Center the heading */
+  margin-bottom: 30px;     /* Space before the cards */
+  font-size: 2.5rem;       /* Larger font size */
+  font-weight: 300;        /* Lighter weight for modern look */
+}
+
+/* Restaurant Grid Layout */
+.restaurant-grid {
+  display: grid;           /* Creates a CSS grid layout */
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));  /* Responsive columns */
+  gap: 25px;               /* Space between cards */
+}
+
+/* Restaurant Card */
+.restaurant-card {
+  background-color: white; /* White background */
+  border-radius: 8px;      /* Rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);  /* Subtle shadow for depth */
+  overflow: hidden;        /* Ensures content doesn't overflow */
+  transition: transform 0.3s, box-shadow 0.3s;  /* Animation for hover effect */
+}
+
+.restaurant-card:hover {
+  transform: translateY(-5px);  /* Slight lift effect on hover */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);  /* Stronger shadow on hover */
+}
+
+/* Card Header */
+.restaurant-card-header {
+  padding: 20px 20px 10px;  /* Space inside the header */
+  border-bottom: 1px solid #f0f0f0;  /* Light divider line */
+}
+
+.restaurant-name {
+  margin: 0 0 5px 0;       /* Remove default margins, add small bottom space */
+  color: #333;             /* Dark text color */
+  font-size: 1.5rem;       /* Larger size for title */
+}
+
+.restaurant-category {
+  display: inline-block;   /* Allow padding */
+  padding: 4px 8px;        /* Space inside the tag */
+  background-color: #f0f8ff;  /* Light blue background */
+  color: #0066cc;          /* Blue text */
+  border-radius: 4px;      /* Rounded corners */
+  font-size: 0.8rem;       /* Smaller text */
+  font-weight: bold;       /* Bold text */
+}
+
+/* Card Body */
+.restaurant-card-body {
+  padding: 15px 20px;      /* Space inside the body */
+  color: #666;             /* Medium gray text */
+}
+
+.restaurant-address, .restaurant-phone {
+  margin: 8px 0;           /* Space between lines */
+  font-size: 0.9rem;       /* Slightly smaller text */
+}
+
+.restaurant-card-body i {
+  margin-right: 8px;       /* Space after icons */
+  color: #999;             /* Lighter gray for icons */
+}
+
+/* Card Footer */
+.restaurant-card-footer {
+  padding: 15px 20px;      /* Space inside the footer */
+  border-top: 1px solid #f0f0f0;  /* Light divider line */
+  text-align: right;       /* Align button to the right */
+}
+
+/* View Details Button */
+.view-details-btn {
+  display: inline-block;   /* Allow padding and sizing */
+  padding: 8px 16px;       /* Space inside button */
+  background-color: #ff6b6b;  /* Coral color */
+  color: white;            /* White text */
+  text-decoration: none;   /* Remove underline */
+  border-radius: 4px;      /* Rounded corners */
+  font-weight: 500;        /* Medium weight */
+  transition: background-color 0.3s;  /* Smooth transition for hover */
+}
+
+.view-details-btn:hover {
+  background-color: #ff5252;  /* Darker on hover */
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+  .restaurant-grid {
+    grid-template-columns: 1fr;  /* Single column on small screens */
+  }
+
+  .page-title {
+    font-size: 2rem;      /* Smaller heading on mobile */
+  }
+}

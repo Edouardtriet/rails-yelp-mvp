@@ -1,0 +1,20 @@
+<!-- app/views/restaurants/new.html.erb -->
+<div class="container mt-5">
+  <h1>Add a New Restaurant</h1>
+
+  <%= simple_form_for @restaurant do |f| %>
+    <%= f.error_notification %>
+
+    <div class="form-inputs mt-3">
+      <%= f.input :name, label: 'Restaurant Name', placeholder: 'Epicure' %>
+      <%= f.input :address, placeholder: '75008 Paris' %>
+      <%= f.input :phone_number, placeholder: '+33 1 23 45 67 89' %>
+      <%= f.input :category, collection: ["chinese", "italian", "japanese", "french", "belgian"], prompt: "Select a category" %>
+    </div>
+
+    <div class="form-actions mt-4">
+      <%= f.button :submit, 'Create Restaurant', class: 'btn btn-primary' %>
+      <%= link_to 'Back to restaurants', restaurants_path, class: 'btn btn-secondary ms-2' %>
+    </div>
+  <% end %>
+</div>

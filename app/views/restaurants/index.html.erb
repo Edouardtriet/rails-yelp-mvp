@@ -1,0 +1,22 @@
+<div class="restaurants-container">
+  <h1 class="page-title">All Restaurants</h1>
+
+  <div class="restaurant-grid">
+    <% @restaurants.each do |restaurant| %>
+      <div class="restaurant-card">
+        <div class="restaurant-card-header">
+          <h2 class="restaurant-name"><%= restaurant.name %></h2>
+          <span class="restaurant-category"><%= restaurant.category.capitalize %></span>
+        </div>
+        <div class="restaurant-card-body">
+          <p class="restaurant-address"><i class="fa fa-map-marker"></i> <%= restaurant.address %></p>
+          <p class="restaurant-phone"><i class="fa fa-phone"></i> <%= restaurant.phone_number %></p>
+        </div>
+        <div class="restaurant-card-footer">
+          <a href="/restaurants/<%= restaurant.id %>" class="view-details-btn">View details</a>
+        </div>
+      </div>
+    <% end %>
+  </div>
+  <a href="/restaurants/new">Add a new Restaurant!</a>
+</div>
